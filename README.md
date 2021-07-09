@@ -1,6 +1,8 @@
 # PID
 PID controller for Atmega32
 
+<img src="https://github.com/sadrasabouri/PID/blob/master/OtherFiles/main.PNG">
+
 <hr>
 
 ## Developers
@@ -8,7 +10,8 @@ PID controller for Atmega32
 + [Omid RostamAbadi](https://github.com/omidrostamabadi)
 + [Sadra Sabouri](https://github.com/sadrasabouri)
 
-<img src="https://github.com/sadrasabouri/PID/blob/master/OtherFiles/main.PNG">
+
+## Main Process
 
 PID controller details have been came bellow:
 
@@ -30,7 +33,6 @@ PID controller details have been came bellow:
 
 + After 16 mins 5 byte of counter will be sent to Port D in a little-endian mode.
 
-## Main Process
 P, I and D coefficients and set point are loaded into ROM by user and AVR will load them into it's memory after execution.
 
 |   Value   | Place on ROM |
