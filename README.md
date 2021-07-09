@@ -25,6 +25,30 @@ PID controller details have been came bellow:
 
 + After 16 mins 5 byte of counter will be sent to Port D in a little-endian mode.
 
+# Main Process
+P, I and D coefficients and set point are loaded into ROM by user and AVR will load them into it's memory after execution.
+
+|   Value   | Place on ROM |
+|:---------:|:------------:|
+|     P     |      20      |
+|     I     |      21      |
+|     D     |      22      |
+| Set Point |      23      |
+
+Then after each iteration (taken each 20ms) the error will be calculated from bellow equation:
+
+```
+error = error - pv;
+```
+(that `pv` stands for present value of the system)
+
+Then new output will be calculated by bellow equation:
+
+```
+output = k_p * error + k_i * integral / SCALE + k_d * derivative * SCALE;
+```
+(in that terms are representing P, I and D segments respectively)
+
 ## Develop
 
 You should use Proteus 8 and WinAVR compiler so that you can open `main.c` code in `Source Code` tab by right click on ATMEGA32 and click on `Edit Source Code`.
